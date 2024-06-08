@@ -6,7 +6,7 @@ DB_URL = "mysql+pymysql://root@mysql:3306/mydb?charset=utf8"
 db_engine = create_engine(DB_URL, echo=True)
 db_session = sessionmaker(autocommit=False, autoflush=False, bind=db_engine)
 
-Base - declarative_base()
+Base = declarative_base()
 
 
 def get_db():
