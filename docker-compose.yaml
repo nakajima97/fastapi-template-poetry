@@ -1,0 +1,11 @@
+services:
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/api
+    environment:
+      - WATCHFILES_FORCE_POLLING=true # ホットリロードのための設定
+    # depends_on:
+    #   - db
