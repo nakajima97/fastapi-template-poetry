@@ -1,12 +1,19 @@
 # fatapi-template
-# setup
-`docker compose run --entrypoint "poetry install --no-root" api`
-
-# Lint
+## Lint
 `docker compose exec api poetry run ruff check`
 
-# format
+## format
 check  
 `docker compose exec api poetry run ruff format --check`  
 run  
 `docker compose exec api poetry run ruff format`  
+
+## migration
+create migration file  
+`docker compose exec api alembic revision --autogenerate -m "create initial table"`  
+
+exec migration  
+`docker compose exec api alembic upgrade head`  
+
+init migration  
+`docker compose exec api alembic downgrade base`  
