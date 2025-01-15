@@ -1,4 +1,4 @@
-# fatapi-template
+# fastapi-template
 ## Lint
 `docker compose exec api poetry run ruff check`
 
